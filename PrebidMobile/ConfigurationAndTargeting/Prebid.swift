@@ -37,6 +37,8 @@ public class Prebid: NSObject {
     
     public var storedBidResponses: [String: String] = [:]
     
+    public weak var eventDelegate: PrebidEventDelegate?
+
     /**
      * This property is set by the developer when he is willing to assign the assetID for Native ad.
      **/

@@ -22,9 +22,12 @@ import PrebidMobile
 import PrebidMobileGAMEventHandlers
 import PrebidMobileAdMobAdapters
 import PrebidMobileMAXAdapters
+import AgmaSdkIos
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    static var agmaSdk = AgmaSdk(config: AgmaSdk.Config(code: "my-code", app: nil, user: nil, device: nil))
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

@@ -71,7 +71,7 @@ class AdMobDisplayBannerViewController: BannerBaseViewController, GADBannerViewD
     //MARK: - GADBannerViewDelegate
     
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-    
+        AppDelegate.agmaSdk.triggerEvent() // optionall set ORTB2 App, User, Device Objects to override default ones
     }
     
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {

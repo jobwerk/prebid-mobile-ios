@@ -90,6 +90,7 @@ class GAMOriginalAPINativeBannerViewController: BannerBaseViewController, GADBan
         })
         
         bannerView.constraints.first { $0.firstAttribute == .width }?.constant = UIScreen.main.bounds.width * 0.1
+        AppDelegate.agmaSdk.triggerEvent() // optionall set ORTB2 App, User, Device Objects to override default ones
     }
     
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {

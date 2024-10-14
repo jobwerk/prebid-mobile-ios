@@ -72,6 +72,7 @@ class GAMOriginalAPIDisplayBannerViewController: BannerBaseViewController, GADBa
         }, failure: { (error) in
             PrebidDemoLogger.shared.error("Error occuring during searching for Prebid creative size: \(error)")
         })
+        AppDelegate.agmaSdk.triggerEvent() // optionall set ORTB2 App, User, Device Objects to override default ones
     }
     
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {

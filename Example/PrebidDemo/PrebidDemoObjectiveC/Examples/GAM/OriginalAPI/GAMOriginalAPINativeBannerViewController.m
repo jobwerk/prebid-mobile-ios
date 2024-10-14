@@ -15,6 +15,7 @@
 
 #import "GAMOriginalAPINativeBannerViewController.h"
 #import "PrebidDemoMacros.h"
+#import "AppDelegate.h"
 
 @import PrebidMobile;
 
@@ -97,6 +98,7 @@ NSString * const gamAdUnit = @"/21808260008/prebid-demo-original-native-styles";
     [self.gamBannerView.constraints filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(NSLayoutConstraint*  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
         return evaluatedObject.firstAttribute == NSLayoutAttributeWidth;
     }]].firstObject.constant = UIScreen.mainScreen.bounds.size.width * 0.1;
+    [[AppDelegate agmaSdk] triggerEventWithApp:nil device:nil user:nil];
 }
 
 - (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {

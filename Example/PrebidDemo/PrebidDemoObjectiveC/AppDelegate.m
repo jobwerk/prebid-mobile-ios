@@ -14,6 +14,7 @@
  */
 
 #import "AppDelegate.h"
+#import <AgmaSdkIos/AgmaSdkIos-Swift.h>
 
 @interface AppDelegate ()
 
@@ -21,8 +22,14 @@
 
 @implementation AppDelegate
 
+@dynamic agmaSdk;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    Config *agmaConfig = [[Config alloc] initWithCode:@"my-code" serverUrl:[NSURL URLWithString:@"https://"] consentString:nil app:nil user:nil device:nil flushThreshold:15 enforceAgmaVendor:true];
+    AgmaSdk *agmaSdk = [[AgmaSdk alloc] initWithConfig:agmaConfig urlSession:[NSURLSession sharedSession] userDefaults:[NSUserDefaults standardUserDefaults] dispatchQueue:dispatch_get_main_queue()];
+    
+    [AppDelegate setAgmaSdk:agmaSdk];
     
     // Initialize Prebid SDK
     [Prebid initializeSDKWithGadMobileAdsVersion:GADGetStringFromVersionNumber(GADMobileAds.sharedInstance.versionNumber) :nil];

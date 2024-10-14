@@ -14,6 +14,7 @@
  */
 
 #import "GAMOriginalAPIMultiformatNativeStylesViewController.h"
+#import "AppDelegate.h"
 
 NSArray<NSString *> * const multiformatNativeStylesStoredPrebidImpressions = @[@"prebid-demo-banner-300-250", @"prebid-demo-video-outstream-original-api", @"prebid-demo-banner-native-styles"];
 NSString * const gamMultiformatNativeStylesAdUnitId = @"/21808260008/prebid-demo-multiformat-native-styles";
@@ -119,6 +120,7 @@ NSString * const gamMultiformatNativeStylesAdUnitId = @"/21808260008/prebid-demo
                                                                          relatedBy:NSLayoutRelationEqual toItem:self.bannerView
                                                                          attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0];
     [self.view addConstraint:centerConstraint];
+    [[AppDelegate agmaSdk] triggerEventWithApp:nil device:nil user:nil];
 }
 
 - (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {

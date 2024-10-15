@@ -22,6 +22,7 @@
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     Config *agmaConfig = [[Config alloc] initWithCode:@"my-code" consentString:nil app:nil user:nil device:nil];
@@ -49,6 +50,7 @@
     
     return YES;
 }
+
 
 #pragma mark - UISceneSession lifecycle
 

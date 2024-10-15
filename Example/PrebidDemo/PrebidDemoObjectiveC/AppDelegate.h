@@ -14,7 +14,6 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "AgmaSdkIos/AgmaSdkIos-Swift.h"
 
 @import PrebidMobile;
 @import GoogleMobileAds;
@@ -27,6 +26,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
 
 @end
 

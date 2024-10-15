@@ -92,7 +92,7 @@ NSString * const gamAdUnitMultiformatBannerOriginal = @"/21808260008/prebid-demo
     } failure:^(NSError * _Nonnull error) {
         PBMLogError(@"%@", error.localizedDescription)
     }];
-    [[AppDelegate agmaSdk] triggerEventWithApp:nil device:nil user:nil];
+    [AgmaSdk.shared triggerEventWithApp:nil device:nil user:nil];
 }
 
 - (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {

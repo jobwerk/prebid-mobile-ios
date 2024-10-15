@@ -16,6 +16,7 @@
 import UIKit
 import PrebidMobile
 import GoogleMobileAds
+import AgmaSdkIos
 
 fileprivate let storedPrebidImpressions = ["prebid-demo-banner-300-250", "prebid-demo-video-outstream-original-api", "prebid-demo-banner-native-styles"]
 fileprivate let gamRenderingMultiformatAdUnitId = "/21808260008/prebid-demo-multiformat-native-styles"
@@ -117,7 +118,7 @@ class GAMOriginalAPIMultiformatNativeStylesViewController: BannerBaseViewControl
                                                   toItem: self.bannerView, attribute: .centerX, multiplier: 1, constant: 0)
                                
         view.addConstraint(centerConstraint)
-        AppDelegate.agmaSdk.triggerEvent() // optionall set ORTB2 App, User, Device Objects to override default ones
+        AgmaSdk.shared.triggerEvent() // optionall set ORTB2 App, User, Device Objects to override default ones
     }
     
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {

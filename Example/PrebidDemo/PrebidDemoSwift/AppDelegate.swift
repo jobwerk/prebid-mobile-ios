@@ -27,8 +27,6 @@ import AgmaSdkIos
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    static var agmaSdk = AgmaSdk(config: AgmaSdk.Config(code: "my-code", app: nil, user: nil, device: nil))
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // ===== INIT: Prebid
@@ -66,7 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ALSdk.shared().userIdentifier = "USER_ID"
         ALSdk.shared().initializeSdk()
         
-        
+        // AGMA SDK
+        AgmaSdk.shared.setConfig(AgmaSdk.Config(code: "my-code", consentString: nil, app: nil, user: nil, device: nil))
         
         return true
     }

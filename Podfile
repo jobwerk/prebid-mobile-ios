@@ -25,7 +25,7 @@ def ima_pod
 end
 
 def agma_sdk_pod
-  pod 'AgmaSdkIos', :git => 'git@github.com:agma-dna/agma-sdk-ios.git', :tag => '0.3.0'
+  pod 'AgmaSdkIos', :git => 'git@github.com:agma-dna/agma-sdk-ios.git', :tag => '0.5.0'
 end
 
 def prebid_demo_pods

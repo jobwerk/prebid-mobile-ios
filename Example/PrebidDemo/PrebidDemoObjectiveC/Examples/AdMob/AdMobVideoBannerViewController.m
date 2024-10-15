@@ -76,7 +76,7 @@ NSString * const adMobAdUnitVideoBannerRendering = @"ca-app-pub-5922967660082475
 // MARK: - GADBannerViewDelegate
 
 - (void)bannerViewDidReceiveAd:(GADBannerView *)bannerView {
-    [[AppDelegate agmaSdk] triggerEventWithApp:nil device:nil user:nil];
+    [AgmaSdk.shared triggerEventWithApp:nil device:nil user:nil];
 }
 
 - (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {

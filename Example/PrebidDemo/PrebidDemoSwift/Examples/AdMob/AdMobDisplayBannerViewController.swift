@@ -17,6 +17,7 @@ import UIKit
 import PrebidMobile
 import GoogleMobileAds
 import PrebidMobileAdMobAdapters
+import AgmaSdkIos
 
 fileprivate let storedImpDisplayBanner = "prebid-demo-banner-320-50"
 fileprivate let adMobAdUnitDisplayBannerRendering = "ca-app-pub-5922967660082475/9483570409"
@@ -71,7 +72,7 @@ class AdMobDisplayBannerViewController: BannerBaseViewController, GADBannerViewD
     //MARK: - GADBannerViewDelegate
     
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        AppDelegate.agmaSdk.triggerEvent() // optionall set ORTB2 App, User, Device Objects to override default ones
+        AgmaSdk.shared.triggerEvent() // optionall set ORTB2 App, User, Device Objects to override default ones
     }
     
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {

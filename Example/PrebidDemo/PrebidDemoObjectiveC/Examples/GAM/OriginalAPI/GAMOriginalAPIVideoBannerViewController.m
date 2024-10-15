@@ -15,7 +15,7 @@
 
 #import "GAMOriginalAPIVideoBannerViewController.h"
 #import "PrebidDemoMacros.h"
-#import "AppDelegate.h"
+#import <AgmaSdkIos/AgmaSdkIos-Swift.h>
 
 @import PrebidMobile;
 @import GoogleMobileAds;
@@ -85,7 +85,7 @@ NSString * const gamAdUnitVideoBannerOriginal = @"/21808260008/prebid-demo-origi
     } failure:^(NSError * _Nonnull error) {
         PBMLogError(@"%@", error.localizedDescription)
     }];
-    [AgmaSdk.shared triggerEventWithApp:nil device:nil user:nil];
+    [AgmaSdk.shared triggerEventWithApp:nil user:nil];
 }
 
 - (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {

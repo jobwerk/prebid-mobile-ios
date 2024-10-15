@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ALSdk.shared().initializeSdk()
         
         // AGMA SDK
-        AgmaSdk.shared.setConfig(AgmaSdk.Config(code: "my-code", consentString: nil, app: nil, user: nil, device: nil))
+        AgmaSdk.shared.setConfig(AgmaSdk.Config(code: "my-code", consentString: nil, app: nil, user: nil))
         
         return true
     }

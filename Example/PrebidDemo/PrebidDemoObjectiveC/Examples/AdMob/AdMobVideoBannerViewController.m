@@ -16,6 +16,7 @@
 #import "AdMobVideoBannerViewController.h"
 #import "PrebidDemoMacros.h"
 #import "AppDelegate.h"
+#import <AgmaSdkIos/AgmaSdkIos-Swift.h>
 
 NSString * const storedImpVideoBannerAdMob = @"prebid-demo-video-outstream";
 NSString * const adMobAdUnitVideoBannerRendering = @"ca-app-pub-5922967660082475/9483570409";
@@ -76,7 +77,7 @@ NSString * const adMobAdUnitVideoBannerRendering = @"ca-app-pub-5922967660082475
 // MARK: - GADBannerViewDelegate
 
 - (void)bannerViewDidReceiveAd:(GADBannerView *)bannerView {
-    [AgmaSdk.shared triggerEventWithApp:nil device:nil user:nil];
+    [AgmaSdk.shared triggerEventWithApp:nil user:nil];
 }
 
 - (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {

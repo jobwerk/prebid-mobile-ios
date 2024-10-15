@@ -25,7 +25,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    Config *agmaConfig = [[Config alloc] initWithCode:@"my-code" consentString:nil app:nil user:nil device:nil];
+    Config *agmaConfig = [[Config alloc] initWithCode:@"my-code" consentString:nil app:nil user:nil];
     [[AgmaSdk shared] setConfig:agmaConfig];
         
     // Initialize Prebid SDK
